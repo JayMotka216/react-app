@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import { Breadcrumb, BreadcrumbItem, Button, Form, Label, Input, Col, FormGroup, Row, FormFeedback} from 'reactstrap';
+import React, { Component } from 'react';
+import { Breadcrumb, BreadcrumbItem, Button, Form, Label, Input, Col, FormGroup, FormFeedback} from 'reactstrap';
 import { Link } from 'react-router-dom';
 
 
@@ -73,10 +73,10 @@ class Contact extends Component {
         const reg = /^\d+$/;
         if(this.state.touched.telnum && !reg.test(telnum) )
             errors.telnum = "Tel. Number should contain only numbers";
-        else if(this.state.touched.telnum && telnum.length==10 )
+        else if(this.state.touched.telnum && telnum.length ===10 )
             errors.lastname = "Tel. Number should be equal to 10 characters";
 
-        if(this.state.touched.email && email.split('').filter(x => x === '@').length !=1)
+        if(this.state.touched.email && email.split('').filter(x => x === '@').length !==1)
             errors.email = "Email should contain a @";
 
         return errors;
